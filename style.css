@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+    width: 400px;
+    height: 200px;
+}
+
+/* Container */
+
+.main-flex-container{
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.inner-flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    margin: 5px;
+}
+
+.text-flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.inner-text-flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:3px 0px
+}
+
+
+.images-flex-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.empty-popup-flex-container{
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 99%;
+    height: 94%;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+}
+
+.empty-popup-flex-container-hide{
+    display: none;
+}
+
+.extras-flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.extension-name-container{
+    width: 100%;
+    text-align: center;
+}
+
+/* icons */
+
+.play-btn{
+    width: 22px;
+    height: 22px;
+}
+
+
+.delete-btn{
+    width: 18px;
+    height: 20px;
+    margin:4px
+}
+
+
+.delete-btn:hover{
+    width: 18.5px;
+    height: 20.5px;
+}
+
+.icon{
+    margin:10px ;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+
+/* Text */
+
+.text-bookmark{
+    font-size: small;
+    color:darkorange;
+    display: block;
+    font-weight: 500;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.text-bookmark-value{
+    font-size: small;
+    color:black;
+    display: block;
+    font-weight:500;
+}
+
+.text-empty-popup{
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.subtext-empty-popup{
+    text-align: center;
+    font-size: small;
+    color: grey;
+    padding: 0px 10px;
+}
+
+.delete-all-text{
+    text-align: center;
+    font-size: medium;
+    font-weight: 650;
+    flex-shrink: 0;
+}
+
+.delete-all-text:hover{
+    cursor: pointer;
+    color: red;
+    font-size: 16.2px;
+}
+
+.extension-name{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.custom-font {
+    font-family: 'Poppins', sans-serif;
+  }

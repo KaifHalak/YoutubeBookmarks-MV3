@@ -1,0 +1,81 @@
+when u r using popup and u want background script to send msg to content script, use .runtime. If u have injected,
+then use .tabs
+
+======================
+
+in manifest file, chrome ui overrides option will override ur deafult new webpage (similar to momentum)
+
+====================
+
+Full URL: https://www.example.com/path?param1=value1&param2=value2 
+Search URL : ?param1=value1&param2=value2
+
+for URLSearchParam, we use search url. To get that use windows.location.search
+
+
+===================
+
+Use textContent to get the text out of a div
+
+====================
+
+chrome.storage.local.get will not work if nothing is stored 
+
+=================
+
+popup.js will only be exe when u open it. So if u add a onMessage.addListener, it wont work if the extension is closed
+
+================
+
+TO prevent widgets from overflowing, using block and max-width in the parent container
+
+or
+
+use flex and flex-shrink as 0
+
+================================
+
+When returning multiple values, just do this: 
+    let returnVal = ExtractYoutubeVidInfo()
+
+    let unique_id = returnVal[0]
+    let object = returnVal[1]
+
+=====================================
+
+use slice fo strings
+use split for time
+
+==================================
+
+window.location.href is only for popup. It is used to redirect users to other htmls within the folder
+to redirect user to a new location, you have to use the background script and chrome.tabs.update or .create
+
+
+=================================
+
+U cannot store undefined in chrome
+chrome.storage.local.clear() is a function
+
+when creating newDiv, u can directly assign it to listener. newDiv.remove() is also a function
+
+================================
+
+To have text on top of the other, have a flex container and start from there
+
+===============================
+
+To give a slight popup animation, increase the width and height of icon/text between .1 and .5 px
+
+=================================
+If u want to use icons in injected script, u have to add the webpages in the permissions and in web resources add the images
+
+===================================
+
+if chrome.storage.local.set doesnt work, first use .clear() and then use .set()
+
+============================
+
+To ensure that the script is injectded on time without needing to reload,
+, use chrome.tabs.onUpdated. This ensures that when a page is loaded, u can check the URL. If it matches,
+then inject. But remember that u still need to also mention it in the manifest file
