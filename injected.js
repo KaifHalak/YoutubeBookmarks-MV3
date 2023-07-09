@@ -32,10 +32,17 @@ function ExtractYoutubeVidInfo(){
     let time_extracted = ExtractTime()
 
     let vid_url = new URLSearchParams(window.location.search)
-    let video_name = document.querySelector("#title .ytd-watch-metadata .ytd-watch-metadata").textContent
     let unique_id = vid_url.get("v")
+    let list_id
+    if (vid_url.has("list")){
+        list_id = vid_url.get("list")
+    } else{
+        list_id = null
+    }
+
+    let video_name = document.querySelector("#title .ytd-watch-metadata .ytd-watch-metadata").textContent
     let channel_name = document.querySelector("#text .yt-formatted-string").textContent
-    let object = {time_extracted  :time_extracted, channel_name : channel_name, video_name:video_name}
+    let object = {time_extracted  :time_extracted, channel_name : channel_name, video_name:video_name, list_id:list_id}
 
     return [unique_id,object]
 

@@ -37,6 +37,9 @@ var StoredData = {
     GetKeys : function(){
         return Object.keys(this.data)
     },
+    GetListID : function(unique_key){
+        return this.data[unique_key]["list_id"] || null
+    },
     DeleteRecord : function(unique_key){
         delete this.data[unique_key]
     }
@@ -73,6 +76,7 @@ function DisplayAll(){
         let time_stamp = StoredData.GetTimeStamp(unique_key = key)
         let channel_name = StoredData.GetChannelName(unique_key = key)
         let video_name = StoredData.GetVideoName(unique_key = key)
+        let list_id = StoredData.GetListID(unique_key = key)
 
         let new_div = document.createElement("div")
         new_div.classList.add(INNER_FLEX_CONATINER_CLASS)
@@ -107,10 +111,15 @@ function DisplayAll(){
         let unique_id = key
         let starting_time_of_vid = ConvertTimeToSeconds(time_stamp.split("/")[0])
 
+        let youtube_vid_link
 
-        let youtube_vid_link = `https://www.youtube.com/watch?v=${unique_id}&t=${starting_time_of_vid}s`
+        if (list_id){
+            youtube_vid_link = `https://www.youtube.com/watch?v=${unique_id}&t=${starting_time_of_vid}s&list=${list_id}`
+        } else {
+            youtube_vid_link = `https://www.youtube.com/watch?v=${unique_id}&t=${starting_time_of_vid}s`
+        }
 
-
+    
         let play_btn = new_div.querySelector(PLAY_VID_ICON_CLASS)
 
         play_btn.addEventListener("click",function(){
