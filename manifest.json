@@ -1,23 +1,19 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Youtube Bookmarks",
   "version": "1.0",
   "description": "Bookmark Youtube Videos",
-  "permissions": ["storage", "tabs","runtime", "https://*.youtube.com/watch*"],
+  "permissions": ["storage", "tabs","runtime"],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
-  "content_scripts": [
+  "web_accessible_resources": [
     {
-      "matches": ["https://www.youtube.com/watch*"],
-      "js": ["injected.js"]
+      "resources": ["Icons/plus.svg"],
+      "matches": [ "https://www.youtube.com/*" ]
     }
   ],
-  "web_accessible_resources": [
-    "Icons/plus.svg"
-  ],
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "DisplayIcons/16.png",  
       "48": "DisplayIcons/48.png",  
@@ -29,5 +25,11 @@
     "16": "DisplayIcons/16.png",    
     "48": "DisplayIcons/48.png",   
     "128": "DisplayIcons/128.png"  
-  }
+  },
+  "content_scripts": [
+		{
+			"js": ["injected.js"],
+			"matches": ["https://www.youtube.com/*"]
+		}
+	]
 }
