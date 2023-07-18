@@ -81,9 +81,10 @@ body{
 
 
 .credits-container{
-    /* position: absolute; */
+    position: absolute;
     text-align: center;
-    width: -webkit-fill-available;
+    width: inherit;
+    top:220px
 }
 
 .credits-container:hover{

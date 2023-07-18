@@ -1,6 +1,5 @@
-
+let youtube_block_where_the_widget_will_be_shown = document.querySelector(".ytp-left-controls")
 function main(){
-    let youtube_block_where_the_widget_will_be_shown = document.querySelector(".ytp-left-controls")
     // add the plus icon
     let widget = document.createElement("div")
     widget.style = 'padding:5px'
