@@ -3,13 +3,13 @@
   "name": "Youtube Bookmarks",
   "version": "1.0",
   "description": "Bookmark Youtube Videos",
-  "permissions": ["storage", "tabs","runtime"],
+  "permissions": ["storage"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "Scripts/background.js"
   },
   "web_accessible_resources": [
     {
-      "resources": ["Icons/plus.svg"],
+      "resources": ["Scripts/Icons/plus.svg"],
       "matches": [ "https://www.youtube.com/*" ]
     }
   ],
@@ -19,7 +19,7 @@
       "48": "DisplayIcons/48.png",  
       "128": "DisplayIcons/128.png" 
     },
-    "default_popup": "popup.html"
+    "default_popup": "Popup/popup.html"
   },
   "icons": {
     "16": "DisplayIcons/16.png",    
@@ -28,7 +28,7 @@
   },
   "content_scripts": [
 		{
-			"js": ["injected.js"],
+			"js": ["Scripts/injected.js"],
 			"matches": ["https://www.youtube.com/*"]
 		}
 	]

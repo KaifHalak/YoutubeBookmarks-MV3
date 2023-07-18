@@ -79,3 +79,12 @@ if chrome.storage.local.set doesnt work, first use .clear() and then use .set()
 To ensure that the script is injectded on time without needing to reload,
 , use chrome.tabs.onUpdated. This ensures that when a page is loaded, u can check the URL. If it matches,
 then inject. But remember that u still need to also mention it in the manifest file
+
+or
+u can use mutations
+
+===========================
+
+There is a difference between contains and includes and forEach and let (for loop)
+
+===========================

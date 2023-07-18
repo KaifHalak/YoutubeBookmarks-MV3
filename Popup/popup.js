@@ -15,7 +15,9 @@ const DELETE_ALL_TIMESTAMPS_MESSAGE = "Are you sure you want to delete all?"
 const MAIN_FLEX_CONTAINER_CLASS = ".main-flex-container"
 const INNER_FLEX_CONATINER_CLASS = "inner-flex-container"
 
-EMPTY_POPUP_MSG_CLASS = ".empty-popup-flex-container"
+const CREDITS_PAGE = ".credits-container"
+
+const EMPTY_POPUP_MSG_CLASS = ".empty-popup-flex-container"
 
 var StoredData = {
     data : {},
@@ -24,6 +26,9 @@ var StoredData = {
     },
     SetData : function(object){
         this.data = object
+    },
+    SetCurrentPage : function(page){
+        this.data["current_page"] = page
     },
     GetTimeStamp : function(unique_key){
         return this.data[unique_key]["time_extracted"]
@@ -35,7 +40,9 @@ var StoredData = {
         return this.data[unique_key]["channel_name"]
     },
     GetKeys : function(){
-        return Object.keys(this.data)
+        let keys = Object.keys(this.data)
+        keys = keys.filter(item => item !== "current_page")
+        return keys
     },
     GetListID : function(unique_key){
         return this.data[unique_key]["list_id"] || null
@@ -46,12 +53,16 @@ var StoredData = {
 }
 
 
-function GetFromChrome(){
+function GetDataFromChrome(){
     chrome.storage.local.get(null,function(stored_data){
-        console.log(stored_data)
         if (Object.keys(stored_data).length === 0){
             EnableEmptyPopupMsg()
         } else {
+            
+            if (stored_data["current_page"] === "credits"){
+                window.location.href = "../CreditsPage/credits.html"
+            }
+            
             StoredData.SetData(object = stored_data)
             DisableEmptyPopupMsg()
             DisplayAll()
@@ -63,6 +74,12 @@ function GetFromChrome(){
 function InitValues(){
     document.querySelector(DELETE_ALL_TIMESTAMPS_CLASS).addEventListener("click",function(){
         DeleteAll()
+    })
+    document.querySelector(CREDITS_PAGE).addEventListener("click",function(){
+        StoredData.SetCurrentPage("credits")
+        chrome.storage.local.set((StoredData.GetData()),function(){
+            window.location.href = "../CreditsPage/credits.html"
+        })
     })
 }
 
@@ -223,4 +240,4 @@ function DeleteAll(){
 }
 
 
-GetFromChrome()
+GetDataFromChrome()

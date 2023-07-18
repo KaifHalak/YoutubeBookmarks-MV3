@@ -11,7 +11,7 @@ function main(){
     // add the plus icon
     let widget = document.createElement("div")
     widget.style = 'padding:5px'
-    widget.innerHTML = `<img src="${chrome.runtime.getURL("Icons/plus.svg")}"
+    widget.innerHTML = `<img src="${chrome.runtime.getURL("Scripts/Icons/plus.svg")}"
     style="width: 100%; height: 100%; cursor: pointer;"
     class="ytp-chapter-title ytp-button ytp-chapter-container-disabled"
     title="Add Bookmark">`;
@@ -88,7 +88,7 @@ function ExtractTime(){
 function UpdateDataInChrome(unique_key,object){
     chrome.storage.local.get(null,function(stored_object){
         if (!stored_object){
-            stored_object = {}
+            stored_object = {"current_page":"popup"}
         }
 
         stored_object[unique_key] = object

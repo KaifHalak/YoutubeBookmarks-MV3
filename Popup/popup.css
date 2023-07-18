@@ -3,7 +3,7 @@
 
 body{
     width: 400px;
-    height: 200px;
+    height: 230px;
 }
 
 /* Container */
@@ -12,7 +12,7 @@ body{
     display: block;
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: 200px;
+    max-height: 215px;
 }
 
 .inner-flex-container{
@@ -77,6 +77,18 @@ body{
 .extension-name-container{
     width: 100%;
     text-align: center;
+}
+
+
+.credits-container{
+    /* position: absolute; */
+    text-align: center;
+    width: -webkit-fill-available;
+}
+
+.credits-container:hover{
+    background-color: lightgray;
+    cursor: pointer;
 }
 
 /* icons */
@@ -156,6 +168,11 @@ body{
 .extension-name{
     font-size: medium;
     font-weight: 600;
+}
+
+.credits-text{
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .custom-font {

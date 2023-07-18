@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    width: 400px;
+    height: 230px;
+}
+
+
+/* Containers */
+
+.heading-container{
+    text-align: center;
+    width: 100%;
+    font-size: medium;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 25px;
+}
+
+.all-credits-container{
+    display: block;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 210px;
+}
+
+.each-credit-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.credit-text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+
+}
+
+
+
+/* Icons */
+.icon{
+    width: 50px;
+    height: 50px;
+    flex-grow: 1;
+}
+
+.delete_icon{
+    width: 45px;
+    height: 45px;
+}
+
+.display-icon{
+    width: 0px;
+    height: 65px;
+    margin-left: 10px;
+}
+
+.go-back-icon{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.go-back-icon:hover{
+    width: 25.5px;
+    height: 25.5px;
+}
+
+/* text */
+
+.credits-text{
+    flex-grow: 1;
+}
