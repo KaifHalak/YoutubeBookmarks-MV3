@@ -88,3 +88,5 @@ u can use mutations
 There is a difference between contains and includes and forEach and let (for loop)
 
 ===========================
+
+background doesnt need for u to specify the resource in manifest, but content yes

@@ -14,7 +14,7 @@ chrome.tabs.onUpdated.addListener(async function(tabId,changeInfo) {
         .executeScript({
           target : {tabId : tabId},
           files : ["Scripts/injected.js"],
-        }).then(function(){console.log("injected")})
+        })
     }
   });
 
