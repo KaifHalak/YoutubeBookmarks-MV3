@@ -1,13 +1,6 @@
 
-let youtube_block_where_the_widget_will_be_shown = document.querySelector(".ytp-left-controls")
-
-if (!youtube_block_where_the_widget_will_be_shown){ // Check if this element exists
-    AddMutationObserver() // start observing for that element 
-} else{
-    main()
-}
-
 function main(){
+    let youtube_block_where_the_widget_will_be_shown = document.querySelector(".ytp-left-controls")
     // add the plus icon
     let widget = document.createElement("div")
     widget.style = 'padding:5px'
@@ -33,31 +26,6 @@ function main(){
     })
 
 }
-
-
-function AddMutationObserver(){
-    let observer = new MutationObserver(function(mutations){
-        for (let each_change of mutations){ 
-            if (each_change.addedNodes){ // if the change involves adding of new elements
-
-                for (let each_added_node of each_change.addedNodes){ // check if the added element has this specific class
-                    if (each_added_node.classList && each_added_node.classList.contains("ytp-left-controls")){
-                        youtube_block_where_the_widget_will_be_shown = document.querySelector(".ytp-left-controls") // element found
-                        main()
-                        observer.disconnect()
-                        return
-                    }
-
-                }
-            }
-
-        }
-
-    })
-    observer.observe(document.documentElement,{childList:true, subtree:true})
-}
-
-
 
 
 function ExtractYoutubeVidInfo(){
@@ -97,3 +65,6 @@ function UpdateDataInChrome(unique_key,object){
 
     })
 }
+
+
+main()

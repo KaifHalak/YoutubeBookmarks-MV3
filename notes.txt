@@ -90,3 +90,7 @@ There is a difference between contains and includes and forEach and let (for loo
 ===========================
 
 background doesnt need for u to specify the resource in manifest, but content yes
+
+================
+
+When using tabs.onUpdated, tab.url will only work when u have host permissions
