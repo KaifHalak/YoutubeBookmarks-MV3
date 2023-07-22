@@ -25,6 +25,7 @@ This extension uses icons from the following artists:
 - [bypeople](https://www.svgrepo.com/svg/512680/plus-1469)
 - [Adam Whitcroft](https://www.svgrepo.com/svg/514197/play)
 - [Ionicons](https://www.svgrepo.com/svg/326519/bookmarks-outline)
+- [Mariusz Ostrowski](https://www.svgrepo.com/svg/446233/left-arrow-1)
 
 ## Installation
 
