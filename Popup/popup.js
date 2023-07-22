@@ -67,6 +67,7 @@ function GetDataFromChrome(){
             DisableEmptyPopupMsg()
             DisplayAll()
             InitValues()
+            // console.log(StoredData.GetData())
         }
     })  
 }

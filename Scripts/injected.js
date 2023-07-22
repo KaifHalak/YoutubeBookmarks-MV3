@@ -59,7 +59,7 @@ function UpdateDataInChrome(unique_key,object){
         }
 
         stored_object[unique_key] = object
-
+        // console.log(stored_object)
         chrome.storage.local.set(stored_object)
 
     })
