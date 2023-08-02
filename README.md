@@ -17,6 +17,8 @@ Now you can bookmark your favorite YouTube videos with ease
 
 ## How To Use
 - Click on a "blue-plus" icon near the video controls (refresh the page if you don't see it)
+![visual-1](./DisplayIcons/visual-1.png)
+![visual-2](./DisplayIcons/visual-2.png)
 ## Credits
 
 This extension uses icons from the following artists:
