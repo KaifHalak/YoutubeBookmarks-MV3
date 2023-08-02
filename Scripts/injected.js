@@ -66,4 +66,8 @@ function UpdateDataInChrome(unique_key,object){
 }
 
 
+chrome.runtime.onMessage.addListener(function(message,sender,senderResponse){
+    senderResponse("recieved")
+})
+
 main()
