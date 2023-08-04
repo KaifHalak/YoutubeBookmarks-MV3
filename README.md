@@ -43,4 +43,4 @@ This extension uses icons from the following artists:
 
 ### Chrome Store:
 
-Coming Soon
+[Chrome Store](https://chrome.google.com/webstore/detail/yt-watchlater/lfghijhlmjjkobnckgojdjhgkoeplfhm/related)
